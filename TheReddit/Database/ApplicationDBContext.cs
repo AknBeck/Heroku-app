@@ -19,6 +19,7 @@ namespace TheReddit.Database
         }
         public DbSet<Post> Posts { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<users2> Users2 { get; set; }
 
     }
 }
