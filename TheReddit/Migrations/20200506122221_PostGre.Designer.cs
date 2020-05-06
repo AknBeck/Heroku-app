@@ -10,7 +10,7 @@ using TheReddit.Database;
 namespace TheReddit.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20200506120933_PostGre")]
+    [Migration("20200506122221_PostGre")]
     partial class PostGre
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -70,18 +70,6 @@ namespace TheReddit.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("TheReddit.Entities.users2", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Users2");
                 });
 
             modelBuilder.Entity("TheReddit.Entities.Post", b =>

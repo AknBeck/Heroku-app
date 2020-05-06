@@ -23,18 +23,6 @@ namespace TheReddit.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Users2",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Users2", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Posts",
                 columns: table => new
                 {
@@ -67,9 +55,6 @@ namespace TheReddit.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Posts");
-
-            migrationBuilder.DropTable(
-                name: "Users2");
 
             migrationBuilder.DropTable(
                 name: "Users");

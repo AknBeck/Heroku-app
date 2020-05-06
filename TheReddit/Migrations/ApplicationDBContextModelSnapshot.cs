@@ -70,18 +70,6 @@ namespace TheReddit.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("TheReddit.Entities.users2", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Users2");
-                });
-
             modelBuilder.Entity("TheReddit.Entities.Post", b =>
                 {
                     b.HasOne("TheReddit.Entities.User", "Owner")
