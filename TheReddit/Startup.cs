@@ -32,8 +32,6 @@ namespace TheReddit
             services.AddMvc();
             services.AddTransient<IPostService, PostDBService>();
             services.AddTransient<UserDBService>();
-            services.AddDbContext<ApplicationDBContext>(builder =>
-                                                        builder.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             services.AddDbContext<ApplicationDBContext>(options =>
                                                         options.UseNpgsql(configuration.GetConnectionString("BloggingContext")));
             //services.AddIdentity<User,IdentityRole>();
