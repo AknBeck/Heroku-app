@@ -66,10 +66,10 @@ namespace TheReddit.Controllers
                 return RedirectToAction("Registration", new { input = isSuccess });
             };
         }
-        [HttpPost("Login")]
+        /*[HttpPost("Login")]
         public IActionResult Login(User user)
         {
             userService.Login(user);
-        }
+        }*/
     }
 }

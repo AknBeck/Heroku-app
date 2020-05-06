@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TheReddit.Entities
 {
-    public class User : IdentityUser
+    public class User
     {
         [Key]
         public long Id { get; set; }
