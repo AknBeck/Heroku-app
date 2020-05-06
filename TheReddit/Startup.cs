@@ -34,7 +34,7 @@ namespace TheReddit
             services.AddTransient<UserDBService>();
             services.AddDbContext<ApplicationDBContext>(builder =>
                                                         builder.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
-            services.AddIdentity<User,IdentityRole>();
+            //services.AddIdentity<User,IdentityRole>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
