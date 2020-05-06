@@ -1,0 +1,22 @@
+﻿@model TheReddit.Models.UserPostViewModel
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>Submit new post</h1>
+
+    @using (Html.BeginForm("AddPost", "Home", FormMethod.Post))
+    {
+        @Html.Label("Title: ")@Html.TextBoxFor(f => f.Post.Title)
+        @Html.Label("URL: ")@Html.TextBoxFor(f => f.Post.Url)
+        <input type="submit" />
+
+        <div>@Html.ActionLink("Cancel", "MainPage", "Home")</div>
+    }
+
+</body>
+</html>
+
+

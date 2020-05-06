@@ -1,0 +1,22 @@
+﻿@model TheReddit.Models.UserPostViewModel
+
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    </head>
+    <body>
+        <h1>Registration</h1>
+        @using (Html.BeginForm("Registration", "Home", FormMethod.Post))
+        {
+            @Html.Label("Username: ")@Html.TextBoxFor(f => f.User.NickName)
+            @Html.Label("Password: ")@Html.TextBoxFor(f => f.User.Password)
+            <input type="submit" />
+            <div>@Html.ActionLink("Cancel", "MainPage", "Home")</div>
+        }
+        @if (!Model.IsRegSuccess)
+        {
+            <h3>NickName Already Used</h3>
+        }
+    </body>
+    </html>
+
+

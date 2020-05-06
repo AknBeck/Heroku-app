@@ -1,0 +1,46 @@
+﻿@model TheReddit.Models.UserPostViewModel
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>@Html.ActionLink("Submit new post", "AddPost", "Home")</td>
+            <td>@Html.ActionLink("Registration", "Registration", "Home")</td>
+        </tr>
+    </table>
+
+    <h1>Trending posts</h1>
+    <h3>Login</h3>
+    @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+    {
+        @Html.Label("Username: ")@Html.TextBoxFor(f => f.User.NickName)
+        @Html.Label("Password: ")@Html.TextBoxFor(f => f.User.Password)
+        <input type="submit" />
+    }
+    @if (Model.Posts == null)
+    {
+        <ul>
+            <li>No Posts</li>
+        </ul>
+    }
+    else
+    {
+        @foreach (var post in Model.Posts)
+        {
+            <table>
+                <tr>
+                    <td>@post.Likes</td>
+                    <td>@Html.ActionLink("+", "RatingUpOrDown", "Home", new { incOrDec = 1, id = post.Id })</td>
+                    <td>@Html.ActionLink("-", "RatingUpOrDown", "Home", new { incOrDec = -1, id = post.Id })</td>
+                    <td><a href=@post.Url>@post.Title</a></td>
+                    <td>@post.DateTime</td>
+                </tr>
+            </table>
+        }
+    }
+</body>
+</html>
+
