@@ -34,6 +34,8 @@ namespace TheReddit
             services.AddTransient<UserDBService>();
             services.AddDbContext<ApplicationDBContext>(builder =>
                                                         builder.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ApplicationDBContext>(options =>
+                                                        options.UseNpgsql(configuration.GetConnectionString("BloggingContext")));
             //services.AddIdentity<User,IdentityRole>();
         }
 
@@ -44,7 +46,7 @@ namespace TheReddit
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            
             app.UseRouting();
             app.UseStaticFiles();
             app.UseEndpoints(endpoints =>
